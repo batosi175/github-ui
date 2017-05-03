@@ -1,3 +1,10 @@
 {{outlet}}
 
 <p>Contributors</p>
+<ul>
+  {{#each model as |contributor|}}
+    <li>{{contributor.id}}</li>
+  {{else}}
+    <li>Sorry no one cares</li>
+  {{/each}}
+</ul>

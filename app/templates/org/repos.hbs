@@ -1,6 +1,8 @@
 <h3>Org Repos</h3>
 <ul>
-  <li>{{link-to 'repo_name_1' 'org.repo.issues' 'repo_name_1'}}</li>
-  <li>{{link-to 'repo_name_2' 'org.repo.issues' 'repo_name_2'}}</li>
-  <li>{{link-to 'repo_name_3' 'org.repo.issues' 'repo_name_3'}}</li>
+  {{#each model as |repo|}}
+    <li>{{link-to repo.id 'org.repo' repo.id}}</li>
+  {{else}}
+    <li>Sorry, you have no repos</li>
+  {{/each}}
 </ul>

@@ -1,8 +1,9 @@
 <h1>Orgs Listing</h1>
 <ul>
-  <li>{{link-to 'FaceBook' 'org.repos' 'facebook'}}</li>
-  <li>{{link-to 'Netflix' 'org.repos' 'netflix'}}</li>
-  <li>{{link-to 'Yahoo' 'org.repos' 'yahoo'}}</li>
-  <li>{{link-to 'Emberjs' 'org.repos' 'emberjs'}}</li>
+  {{#each model as |org|}}
+    <li>{{link-to org.id 'org' org.id }}</li>
+  {{else}}
+  <li>Sorry the list is empty</li>
+  {{/each}}
 </ul>
 {{outlet}}

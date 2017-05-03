@@ -1,3 +1,10 @@
 {{outlet}}
 
 <p>Issues</p>
+<ul>
+  {{#each model as |issue|}}
+    <li>{{issue.id}}</li>
+  {{else}}
+    <li>Huh, guess nothing went wrong</li>
+  {{/each}}
+</ul>
