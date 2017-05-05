@@ -2,10 +2,21 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return [
-      {id: 'repo_name_1'},
-      {id: 'repo_name_2'},
-      {id: 'repo_name_3'}
-    ]
+    //get id resovled from org
+    let orgName = Ember.get(this.modelFor('org'), 'id');
+
+    //using that id to make an api call to fetch data
+    return Ember.$.get(`https://api.github.com/orgs/${orgName}/repos`).then(rawRepos => {
+      return rawRepos.map(rawRepo => {
+        rawRepo.oldId = rawRepo.id;
+        rawRepo.id = rawRepo.name;
+        return rawRepo;
+      });
+    });
+  },
+
+  setupController(controller) {
+    this._super(...arguments);
+    controller.set('org', this.modelFor('org'));
   }
 });

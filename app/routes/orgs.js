@@ -5,10 +5,11 @@ export default Ember.Route.extend({
 
   model() {
     return [
-      {id: 'Facebook'},
-      {id: 'Netflix'},
-      {id: 'Yahoo'},
-      {id: 'Emberjs'}
+      {id: 'blizzard'},
+      {id: 'facebook'},
+      {id: 'netflix'},
+      {id: 'yahoo'},
+      {id: 'emberjs'}
     ];
   },
 
