@@ -11,6 +11,17 @@ export default Ember.Route.extend({
       {id: 'yahoo'},
       {id: 'emberjs'}
     ];
+    // return new Ember.RSVP.Promise((resolve, reject) => {
+    //   Ember.run.later(() => {
+    //     resolve([
+    //       {id: 'blizzard'},
+    //       {id: 'facebook'},
+    //       {id: 'netflix'},
+    //       {id: 'yahoo'},
+    //       {id: 'emberjs'}
+    //     ]);
+    //   }, 1000);
+    // })
   },
 
   setupController(controller) {
