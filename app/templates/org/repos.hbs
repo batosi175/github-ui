@@ -1,7 +1,7 @@
 <h3 style='text-transform: capitalize;'>{{org.id}} repos</h3>
 <ul>
   {{#each model as |repo|}}
-    <li>{{link-to repo.name 'org.repo' repo.name}}</li>
+  {{github-repo repo=repo}}
   {{else}}
     <li>Sorry, you have no repos</li>
   {{/each}}
