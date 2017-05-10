@@ -1,7 +1,7 @@
 <h1>Orgs Listing</h1>
 <ul>
   {{#each model as |org|}}
-    {{github-org org=org on-add-fav='addToFavorites'}}
+    {{github-org org=org on-fav-click='favoritesClicked'}}
   {{else}}
   <li>Sorry the list is empty</li>
   {{/each}}

@@ -29,8 +29,13 @@ export default Ember.Route.extend({
     controller.set('favorites', this.get('favorites.items'));
   },
   actions: {
-    addToFavorites(org){
-      this.get('favorites').favoriteItem(org);
+    favoritesClicked(org){
+      if (this.get('favorites.items').indexOf(org) < 0) {
+        this.get('favorites').favoriteItem(org);
+      } else {
+        this.get('favorites').unfavoriteItem(org);
+      }
+
     }
   }
 });

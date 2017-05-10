@@ -1,0 +1,12 @@
+import Ember from 'ember';
+
+const { computed } = Ember;
+
+export default function isInArray(itemKey, listKey) {
+  return computed(itemKey, `${listKey}.[]`, function() {
+    // do the computation
+    const item = this.get(itemKey);
+    const list = this.get(listKey);
+    return list.indexOf(item) >= 0;
+  });
+}
