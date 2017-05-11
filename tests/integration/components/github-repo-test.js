@@ -13,7 +13,7 @@ test('it renders', function(assert) {
 
   const repo = Ember.Object.create({
     forks_count: 32,
-    watchers_count: 99,
+    watchers_count: 9999,
     name: 'repooo'
   });
   this.set('repo', repo);
@@ -23,8 +23,8 @@ test('it renders', function(assert) {
 
   (
   Forks: 32
-  Watchers: 99
-  )`);
+  Watchers: 10K
+  )`, 'renderes inline');
 
   // Template block usage:
   this.render(hbs`
@@ -39,6 +39,6 @@ repooo
 
   (
   Forks: 32
-  Watchers: 99
-  )`);
+  Watchers: 10K
+  )`, 'renders with block text');
 });
