@@ -20,7 +20,7 @@ export default DS.RESTSerializer.extend({
         payload.id = payload.login || payload.name;
         break;
       default:
-        debugger;
+        // debugger;
     }
 
     return this._super(store, primaryModelClass, {[`${topLevelKey}`]: payload}, id, requestType)
